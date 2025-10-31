@@ -1,8 +1,6 @@
-# Ma découverte de la blockchain : Explication pas à pas
+# Ma découverte de la blockchain : 
 
-## Introduction
 
-Quand j'ai commencé à m'intéresser à la blockchain, j'étais un peu perdu au début. Tout ce que j'entendais parlait de bitcoins, de cryptomonnaies et de technologie décentralisée. Alors j'ai décidé de créer ma propre implémentation simple pour comprendre comment tout cela fonctionne vraiment. Ce document raconte mon parcours d'apprentissage et explique chaque élément de mon code.
 
 ## Mes premiers pas : Qu'est-ce qu'un bloc ?
 
@@ -68,7 +66,7 @@ J'ai mis "0" comme previous_hash puisqu'il n'y a pas de bloc avant lui.
 
 ## Le minage : Le travail qui sécurise la blockchain
 
-C'est ici que j'ai vraiment compris l'ingéniosité de la blockchain. Pour ajouter un bloc, il ne suffit pas de le créer - il faut le "miner". J'ai découvert que le minage consiste à résoudre un puzzle mathématique.
+C'est ici que j'ai vraiment compris l'ingéniosité de la blockchain. Pour ajouter un bloc, il ne suffit pas de le créer - il faut le "miner". J'ai découvert que le minage consiste à résoudre un probleme  mathématique.
 
 Voici ma fonction de minage :
 
@@ -93,7 +91,7 @@ def mine_block(self, data, difficulty):
     self.chain.append(new_block)
 ```
 
-Au début, je ne comprenais pas pourquoi on faisait tout ce travail. Mais j'ai appris que c'est ce qui rend la blockchain sécurisée. Pour modifier un bloc, il faudrait recommencer tout le minage, ce qui est extrêmement difficile.
+ j'ai appris que c'est ce qui rend la blockchain sécurisée. Pour modifier un bloc, il faudrait recommencer tout le minage, ce qui est extrêmement difficile.
 
 ## La difficulté : Rendre le minage plus ou moins complexe
 
@@ -106,7 +104,7 @@ def hash_starts_with_zeros(self, hash_value, difficulty):
 
 Plus la difficulté est élevée, plus il faut de temps pour miner un bloc. C'est comme ça que la blockchain ajuste sa sécurité selon le nombre de participants.
 
-## Mon moment "eureka" : La vérification de la chaîne
+##  La vérification de la chaîne
 
 Ce qui m'a vraiment impressionné, c'est quand j'ai compris comment vérifier que la chaîne n'a pas été modifiée. Chaque bloc contient le hash du bloc précédent. Si quelqu'un modifie un bloc du passé, son hash change, ce qui invalide tous les blocs suivants.
 
@@ -165,8 +163,3 @@ Maintenant que je comprends les bases, je vois plusieurs façons d'améliorer mo
 4. **Stockage** : Sauvegarder la blockchain dans un fichier ou une base de données
 5. **Portefeuille** : Implémenter un système d'adresses et de clés cryptographiques
 
-## Conclusion
-
-Cette expérience m'a vraiment ouvert les yeux sur la puissance de la technologie blockchain. Ce qui semblait magique au début s'est révélé être une combinaison intelligente de concepts simples : le hachage cryptographique, les structures de données en chaîne, et la preuve de travail.
-
-Même si mon implémentation est basique, elle m'a permis de comprendre les principes fondamentaux qui sous-tendent des technologies comme Bitcoin et Ethereum. C'est une excellente base pour explorer des concepts plus avancés comme les contrats intelligents ou les blockchains permissionless.
