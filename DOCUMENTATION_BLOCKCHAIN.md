@@ -1,7 +1,5 @@
 # Ma découverte de la blockchain : 
 
-
-
 ## Mes premiers pas : Qu'est-ce qu'un bloc ?
 
 Au début, je me suis demandé : "Qu'est-ce qu'un bloc exactement ?" Après quelques recherches, j'ai compris qu'un bloc est comme une page dans un registre. Chaque page contient des informations et est liée à la page précédente.
@@ -124,6 +122,47 @@ def display_chain(self):
         print(f"Nonce           : {block.nonce}")
     print("=======================\n")
 ```
+
+## Amélioration de la visualisation (V2.py)
+
+Après avoir créé ma première version, j'ai réalisé que la représentation visuelle de la blockchain pourrait être améliorée pour mieux montrer comment les blocs sont enchaînés. J'ai donc créé une version 2 ([V2.py](file:///c:/Users/MSI/Desktop/Blockchain/V2.py)) avec une visualisation plus claire :
+
+```python
+def display_chain(self):
+    print("\n" + "="*60)
+    print("                    BLOCKCHAIN")
+    print("="*60)
+    
+    for i, block in enumerate(self.chain):
+        # Display block header
+        print(f"\n┌─ BLOCK #{block.index} " + "─" * (45 - len(str(block.index))) + "┐")
+        
+        # Display block content
+        print(f"│ Timestamp       : {block.timestamp}")
+        print(f"│ Data            : {block.data}")
+        print(f"│ Nonce           : {block.nonce}")
+        print(f"│ Previous Hash   : {block.previous_hash}")
+        print(f"│ Hash            : {block.hash}")
+        
+        # Display block footer
+        print("└" + "─" * 58 + "┘")
+        
+        # Show chain link if not the last block
+        if i < len(self.chain) - 1:
+            print(" " * 25 + "│")
+            print(" " * 25 + "▼")
+            print(" " * 20 + "LINK TO NEXT BLOCK")
+            print(" " * 25 + "│")
+    
+    print("\n" + "="*60)
+    print(f"Total blocks: {len(self.chain)}")
+    print("="*60 + "\n")
+```
+
+Cette nouvelle visualisation montre clairement :
+1. Chaque bloc dans une "boîte" avec des bordures
+2. Les liens visuels entre les blocs avec des flèches
+3. Un format plus lisible et structuré
 
 ## Test de mon implémentation
 
